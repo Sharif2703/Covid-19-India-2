@@ -1,0 +1,59 @@
+//Returns a list of all states in the state table
+//API 1
+GET http://localhost:3000/states/
+###
+
+//Returns a state based on the state ID
+//API 2
+GET http://localhost:3000/states/1/
+###
+
+//Create a district in the district table
+//API 3
+POST http://localhost:3000/districts/
+Content-Type:application/json
+
+{
+  "districtName": "Bagalkot",
+  "stateId": 3,
+  "cases": 2323,
+  "cured": 2000,
+  "active": 315,
+  "deaths": 8
+}
+###
+
+//Returns a district based on the district ID
+//API 4
+GET http://localhost:3000/districts/8/
+###
+
+//Deletes a district from the district table based on the district ID
+//API 5
+DELETE http://localhost:3000/districts/8/
+###
+
+//Updates the details of a specific district based on the district ID
+//API 6
+PUT http://localhost:3000/districts/8/
+Content-Type: application/json
+
+{
+  "districtName": "Nadia",
+  "stateId": 3,
+  "cases": 9628,
+  "cured": 6524,
+  "active": 3000,
+  "deaths": 104
+}
+###
+
+//Returns the statistics of total cases, cured, active, deaths of a specific state based on state ID
+//API 7
+GET http://localhost:3000/states/3/stats/
+###
+
+//Returns an object containing the state name of a district based on the district ID
+//API 8
+GET http://localhost:3000/districts/3/details/
+###
